@@ -1,0 +1,370 @@
+.header
+	height: 87px
+	width: 100%
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	+vertical
+	+trans
+	&.is-fixed
+		background-color: rgba(#000, .7)
+	.l
+		display: inline-block
+		vertical-align: middle
+	&__logo
+		width: 125px
+		display: inline-block
+		vertical-align: middle
+		margin-bottom: 8px
+		position: relative
+		z-index: 5
+.nav
+	display: inline-block
+	vertical-align: middle
+	width: calc(100% - 125px)
+	text-align: right
+	font-size: 18px
+	color: #fff
+	position: relative
+	&__toggle
+		display: inline-block
+		vertical-align: middle
+		cursor: pointer
+		position: relative
+		z-index: 2
+		&:hover
+			.nav__toggle-btn > span
+				&:nth-child(2)
+					transform: translateX(0)
+				&:nth-child(1),
+				&:nth-child(3)
+					transform: translateX(-4px)
+		&.is-active
+			& + .nav__list
+				opacity: 1
+				transform: translate(0, -50%)
+				z-index: 3
+				+sm
+					transform: translate(0, 0)
+					padding: 87px 15px
+					height: 100vh
+					z-index: 1
+					font-size: 18px
+				
+		&-text
+			display: inline-block
+			vertical-align: middle
+			margin-right: 18px
+			opacity: 1
+			+trans
+			&.is-hidden
+				opacity: 0
+
+		&-btn
+			display: inline-block
+			vertical-align: middle
+			background-color: transparent
+			overflow: hidden
+			& > span
+				display: block
+				width: 20px
+				height: 2px
+				background-color: $accent-blue
+				margin-bottom: 5px
+				+trans
+				&:nth-child(2)
+					transform: translateX(-4px)
+				&:nth-child(3)
+					margin-bottom: 0
+			
+
+	&__list
+		position: absolute
+		z-index: 1
+		right: 38px
+		top: 50%
+		transform: translate(5%, -50%)
+		transition: opacity .3s ease-out
+		transition: transform .3s ease-out
+		opacity: 0
+		+sm
+			position: fixed
+			z-index: 1
+			height: 0
+			padding: 0
+			top: 0
+			left: 0
+			width: 100%
+			background-color: rgba(#000, .9)
+			transform: translate(0, 0)
+			text-align: center
+			font-size: 0
+			
+		
+	&__item
+		display: inline-block
+		padding: 4px
+		margin-left: 15px
+		+sm
+			display: block
+			margin: 25px 0
+	&__link
+		display: block
+		color: #fff
+		text-decoration: none
+		+trans
+		&:hover
+			opacity: .7
+		// +sm
+		// 	color: $common-gray
+
+.hero
+	width: 100%
+	height: 100vh
+	+cover
+	padding-top: 87px
+	position: relative
+	+vertical
+	.l
+		display: inline-block
+		vertical-align: middle
+	&__title
+		padding-bottom: 150px
+		h1
+			font-size: 90px
+			+css-lock(40, 90, 320, 1920)
+			color: #fff
+			+rl
+			font-weight: normal
+			text-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3)
+	&__scrolldown
+		display: block
+		position: absolute
+		bottom: 41px
+		left: 50%
+		transform: translateX(-50%)
+		padding: 4px
+		.icon-arrow
+			font-size: 14px
+			display: block
+			margin-bottom: 8px
+			&:nth-child(1)
+				animation: topblink 2s infinite ease-out
+			&:nth-child(2)
+				animation: middleblink 2s infinite ease-out
+			&:nth-child(3)
+				animation: bottomblink 2s infinite ease-out
+.section
+	&__title
+		h2
+			+rl
+			font-size: 48px
+			+css-lock(32, 48, 320, 1920)
+			color: $accent-gray
+			font-weight: normal
+			position: relative
+			display: inline-block
+			line-height: 1
+			padding-bottom: 35px
+			&:before
+				content: ""
+				display: block
+				width: 80px
+				height: 2px
+				background-color: $accent-violet
+				position: absolute
+				bottom: 0
+				left: 50%
+				transform: translateX(-50%)
+				+sm
+					bottom: 15px
+
+.about
+	padding-top: 95px
+	.l
+		+clr
+		padding-bottom: 105px
+	&__title
+		width: percentage(470/1200)
+		float: left
+		+sm
+			float: none
+			width: 100%
+		h2
+			&:before
+				transform: none
+				left: 0
+	&__text
+		overflow: hidden
+		padding-left: 15px
+		+sm
+			padding-left: 0
+.gallery
+	display: flex
+	flex-wrap: wrap
+	&__item
+		width: 25%
+		padding-top: 14%
+		position: relative
+		height: 0
+		+md
+			padding-top: 25%
+		+sm
+			width: 50%
+			padding-top: 35%
+		+xs
+			padding-top: 45%
+	&__pic
+		+coverdiv
+		+cover
+.services
+	padding: 95px 0 80px
+	text-align: center
+	&__title
+		margin-bottom: 75px
+	&__boxes
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		text-align: center
+		.box
+			margin-bottom: 50px
+			width: percentage(370/1170)
+			text-align: center
+			+md
+				width: 100%
+.app
+	background: #4822a8
+	background: radial-gradient(ellipse at center, #4822a8 0%, #15063a 100%)
+	&__col
+		width: 50%
+		+sm
+			width: 100%
+	&__title
+		font-size: 62px
+		+css-lock(28, 62, 320, 1920)
+		+rl
+		color: #fff
+		line-height: 1.1
+		margin-bottom: 20px
+	&__desc
+		color: rgba(#fff, .6)
+		font-size: 18px
+		+css-lock(14, 18, 320, 1920)
+		margin-bottom: 68px
+	&__images
+		font-size: 0
+		margin-top: 50px
+		+sm
+	&__image
+		display: inline-block
+		vertical-align: top
+		position: relative
+		width: 50%
+		padding-left: 70px
+		+sm
+			padding-left: 0
+			padding-right: 70px
+			max-width: 270px
+		+r(568)
+			padding-right: 40px
+			max-width: 240px
+		img
+			max-width: 100%
+			position: relative
+
+		&:nth-child(even)
+			margin-top: 20px
+		&:before
+			content: ""
+			display: block
+			position: absolute
+			z-index: 0
+			top: 0
+			right: 0
+			height: 100%
+			width: calc(100% - 70px)
+			box-shadow: 0 10px 30px rgba(0,0,0,.4)
+			+sm
+				right: initial
+				left: 0
+			+r(568)
+				width: calc(100% - 40px)
+	&__category
+		opacity: .7
+		font-size: 16px
+		+css-lock(10, 16, 320, 1920)
+		text-transform: uppercase
+	&__name
+		font-size: 24px
+		+css-lock(14, 24, 320, 1920)
+		text-transform: capitalize
+	&__tab-item
+		width: 50%
+
+.testimonials
+	padding: 50px 0
+	overflow: hidden
+	&__icon
+		display: block
+		text-align: center
+		.icon-twitter
+			width: 56px
+			height: 56px
+			fill: #edeef0
+			margin-bottom: 50px
+	&__slider
+		min-width: 180%
+		position: relative
+		left: -40%
+		+xs
+			min-width: auto
+			left: 0
+		.slick-current
+			.box
+				transform: translateY(-20px)
+				box-shadow: 0 10px 40px rgba(0,0,0,.15)
+				opacity: 1
+	&__slide
+		margin-top: 35px
+		margin-bottom: 35px
+		.box
+			box-shadow: 0 10px 30px rgba(0,0,0,.1)
+			width: 88%
+			margin: 0 auto
+			opacity: .3
+			+xs
+				width: 96%
+.footer
+	background: #4822a8
+	background: radial-gradient(ellipse at center, #4822a8 0%, #15063a 100%)
+	.col
+		width: 50%
+		+sm
+			width: 100%
+			text-align: left
+	&__in
+		padding: 95px 0
+	&__logo
+		width: 125px
+		display: inline-block
+		margin-bottom: 20px
+	&__desc
+		font-size: 18px
+		+css-lock(14, 18, 320, 1920)
+		color: rgba(#fff, .7)
+		+sm
+			margin-bottom: 40px
+	&__meta
+		border-top: 1px solid rgba(#fff, .7)
+		padding: 20px 0
+		text-transform: uppercase
+		color: rgba(#fff, .7)
+		.col
+			font-size: 14px
+			+css-lock(10, 14, 320, 1920)
+		.icon-heart
+			fill: $accent-blue
+			font-size: 10px
+			margin: 0 5px

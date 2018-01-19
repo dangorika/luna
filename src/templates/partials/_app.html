@@ -1,0 +1,83 @@
+{% set tabs = [
+	{
+		name: 'Payme mobile app',
+		category: 'Mobile Apps',
+		section: 'UX / UI',
+		title: '<span class="blue">Payme</span> mobile app',
+		description: '<p>Payme is a best & simplest way to create your own mobile payment app and fit in with as much information as you want. Perfect base to build an amazing app with easy navigation and intuitive UX.</p>',
+		button: 'See case study',
+		images: ['img/screen1.jpg', 'img/screen2.jpg']
+	},
+	{
+		name: 'Interactive agency',
+		category: 'Websites',
+		section: 'UX / UI',
+		title: '<span class="blue">Interactive</span> Agency',
+		description: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nisi tempora veritatis incidunt dolorem reprehenderit, error architecto, assumenda aperiam maiores molestias autem earum obcaecati? Obcaecati illo beatae, fugit rerum provident?</p>',
+		button: 'See case study',
+		images: ['img/screen1.jpg', 'img/screen2.jpg']
+	},
+	{
+		name: 'Nava.com Website',
+		category: 'Websites',
+		section: 'UX / UI',
+		title: '<span class="blue">Nava.com</span> Website',
+		description: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nisi tempora veritatis incidunt dolorem reprehenderit, error architecto, assumenda aperiam maiores molestias autem earum obcaecati? Obcaecati illo beatae, fugit rerum provident?</p>',
+		button: 'See case study',
+		images: ['img/screen1.jpg', 'img/screen2.jpg']
+	},
+	{
+		name: 'Virtus Dashboard',
+		category: 'Web apps',
+		section: 'UX / UI',
+		title: '<span class="blue">Virtus</span> Dashboard',
+		description: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nisi tempora veritatis incidunt dolorem reprehenderit, error architecto, assumenda aperiam maiores molestias autem earum obcaecati? Obcaecati illo beatae, fugit rerum provident?</p>',
+		button: 'See case study',
+		images: ['img/screen1.jpg', 'img/screen2.jpg']
+	}
+	
+]
+%}
+
+<section class="section app" id="app">
+	<div class="l">
+		<div class="app__tabs tabs js-tabs">
+			{% for t in tabs %}
+			<!-- begin tabs__content -->
+			<div class="tabs__content row js-tab-content">
+				<div class="app__col col">
+					<h2 class="app__title">{{ t.title | safe }}</h2>
+					<div class="app__desc">{{ t.description | safe }}</div>
+					<button class="button">{{ t.button }}</button>
+				</div>
+				<div class="app__col col">
+					<div class="app__images">
+						{% for i in t.images %}
+						<div class="app__image">
+							<img src="{{ i }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- end tabs__content -->
+			{% endfor %}
+
+			<!-- begin tabs__list -->
+			<ul class="tabs__list">
+				{% for t in tabs %}
+				<li class="tabs__item app__tab-item js-tab-link">
+					<a href="" class="tabs__link">
+						<h4 class="app__category">
+							{{ t.category }} &bull; 
+							{{ t.section }}
+						</h4>
+						<h3 class="app__name">{{ t.name | safe }}</h3>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<!-- end tabs__list -->
+		</div>
+	</div>
+</section>

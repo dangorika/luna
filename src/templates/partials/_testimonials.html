@@ -1,0 +1,50 @@
+{% set testimonials = [
+	{
+		quote: "<p><a href=\"\" class=\"link blue\">#PaymeApp</a> win Apple Design Award! Big thanks to <a href=\"\" class=\"link blue\">@DigitalStudio!</a> They are aggressive in trying out new technologies and new design techniques. The best guys I've worked with.</p>",
+		avatar: 'https://placeimg.com/65/65/people',
+		name: 'Frank Underwood',
+		nickname: '@PresidentFrank'
+	},
+	{
+		quote: "<p><a href=\"\" class=\"link blue\">#PaymeApp</a> win Apple Design Award! Big thanks to <a href=\"\" class=\"link blue\">@DigitalStudio!</a> They are aggressive in trying out new technologies and new design techniques. The best guys I've worked with.</p>",
+		avatar: 'https://placeimg.com/65/65/people',
+		name: 'Frank Underwood',
+		nickname: '@PresidentFrank'
+	},
+	{
+		quote: "<p><a href=\"\" class=\"link blue\">#PaymeApp</a> win Apple Design Award! Big thanks to <a href=\"\" class=\"link blue\">@DigitalStudio!</a> They are aggressive in trying out new technologies and new design techniques. The best guys I've worked with.</p>",
+		avatar: 'https://placeimg.com/65/65/people',
+		name: 'Frank Underwood',
+		nickname: '@PresidentFrank'
+	},
+	{
+		quote: "<p><a href=\"\" class=\"link blue\">#PaymeApp</a> win Apple Design Award! Big thanks to <a href=\"\" class=\"link blue\">@DigitalStudio!</a> They are aggressive in trying out new technologies and new design techniques. The best guys I've worked with.</p>",
+		avatar: 'https://placeimg.com/65/65/people',
+		name: 'Frank Underwood',
+		nickname: '@PresidentFrank'
+	}
+]
+%}
+
+<section class="section testimonials" id="testimonials">
+	<i class="testimonials__icon">{{ mixins.icon('twitter') }}</i>
+	<div class="testimonials__slider js-carousel">
+		{% for t in testimonials %}
+		<div class="testimonials__slide">
+			<div class="box">
+				<div class="box__quote">{{ t.quote | safe }}</div>
+				<div class="box__author row">
+					<div class="box__avatar col">
+						<img src="{{ t.avatar }}" alt="">
+					</div>
+					<div class="box__name col">
+						{{ t.name | safe }}
+						<br />
+						<a href="" class="link blue">{{ t.nickname | safe }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
